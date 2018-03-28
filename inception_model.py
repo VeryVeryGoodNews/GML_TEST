@@ -1,9 +1,4 @@
 
-# coding: utf-8
-
-# In[ ]:
-
-
 import numpy as np
 import keras.backend as K
 from keras.preprocessing.image import ImageDataGenerator
@@ -33,7 +28,7 @@ from matplotlib import pyplot as plt
 
 K.set_learning_phase(0)
 
-model = applications.InceptionV3(include_top=False, weights='imagenet',input_shape=(299, 299, 3))
+model = applications.InceptionV3(include_top=True, weights='imagenet',input_shape=(299, 299, 3))
 
 print model.summary()
 
@@ -109,4 +104,3 @@ b.add_meta_graph_and_variables(sess2,
                     signature_def_map={'serving_default': signature})
         
 b.save()
-
